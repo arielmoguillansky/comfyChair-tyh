@@ -5,6 +5,14 @@ class ArticuloRegular extends Articulo {
     this._resumen = resumen
   }
 
+  get resumen() {
+    return this._resumen;
+  }
+
+  set resumen(resumen) {
+    this._resumen = resumen;
+  }
+
   esArticuloRegular() {
     return true;
   }

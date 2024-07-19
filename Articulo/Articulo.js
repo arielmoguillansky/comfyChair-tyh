@@ -6,8 +6,25 @@ class Articulo {
     this._intereses = new Map();
   }
 
+
   get autores() {
     return this._autores;
+  }
+
+  get titulo() {
+    return this._titulo;
+  }
+
+  set titulo(titulo) {
+    this._titulo = titulo;
+  }
+
+  get archivo() {
+    return this._archivo;
+  }
+
+  set archivo(archivo) {
+    this._archivo = archivo;
   }
 
   agregarAutor(autor) {

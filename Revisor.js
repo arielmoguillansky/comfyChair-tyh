@@ -10,11 +10,23 @@ class Revisor extends Usuario {
   }
 
   expresarInteres(articulo, interes, sesion) {
-    if (!sesion.estado.esBidding()) {
-      throw new Error('No se puede expresar interes en este estado');
+    if (sesion._estado.esBidding()) {
+      const articuloEncontrado = sesion._articulos.find((articuloExistente, index) => {
+        if (articuloExistente.titulo === articulo.titulo) {
+          sesion._articulos[index].agregarInteres(this, interes);
+          return articuloExistente;
+        }
+      });
+
+      if (!articuloEncontrado) {
+        throw new Error('El articulo no existe');
+      }
+    } else {
+      throw new Error('No se pueden modificar articulos en este estado');
     }
-    articulo.agregarInteres(this, interes);
+
   }
+
 }
 
 module.exports = Revisor;

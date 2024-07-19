@@ -21,7 +21,14 @@ class Autor extends Usuario {
     if (sesion._estado.esRecepcion()) {
       const articuloEncontrado = sesion._articulos.find((articuloExistente, index) => {
         if (articuloExistente.titulo === articulo.titulo) {
-          sesion._articulos[index] = articuloActualizado;
+          sesion._articulos[index].titulo = articuloActualizado.titulo;
+          sesion._articulos[index].archivo = articuloActualizado.archivo;
+          if (sesion._articulos[index].esArticuloRegular()) {
+            sesion._articulos[index].resumen = articuloActualizado.resumen;
+          }
+          if (sesion._articulos[index].esArticuloPoster()) {
+            sesion._articulos[index].fuentes = articuloActualizado.fuentes;
+          }
           return articuloExistente;
         }
       });
@@ -32,7 +39,6 @@ class Autor extends Usuario {
     } else {
       throw new Error('No se pueden modificar articulos en este estado');
     }
-
   }
 
   esAutor() {

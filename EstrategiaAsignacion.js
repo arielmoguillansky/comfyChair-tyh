@@ -13,6 +13,9 @@ class AsignacionInteresPrimero {
       let quizas = [];
       let noInteresados = [];
       console.log('AAAAAAAA', articulo);
+      if (!articulo.intereses) {
+        throw new Error('El articulo debe tener al menos un interes');
+      }
       articulo.intereses.forEach((interes, revisor) => {
         switch (interes) {
           case 'interesado':

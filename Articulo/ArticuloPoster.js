@@ -5,6 +5,14 @@ class ArticuloPoster extends Articulo {
     this._fuentes = fuentes
   }
 
+  get fuentes() {
+    return this._fuentes;
+  }
+
+  set fuentes(fuentes) {
+    this._fuentes = fuentes;
+  }
+
   esArticuloPoster() {
     return true;
   }
