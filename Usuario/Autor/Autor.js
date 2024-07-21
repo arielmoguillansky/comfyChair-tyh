@@ -1,4 +1,4 @@
-const Usuario = require('./Usuario');
+const Usuario = require('../Usuario');
 
 class Autor extends Usuario {
   constructor(nombre, apellido, afiliacion, email, contraseña) {

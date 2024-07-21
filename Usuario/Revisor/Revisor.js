@@ -1,5 +1,5 @@
-const Usuario = require('./Usuario');
-const GestorDeRevisiones = require('./GestionRevisiones');
+const Usuario = require('../Usuario');
+const GestorDeRevisiones = require('../../Conferencia/Sesion/GestionRevisiones');
 const gestorDeRevisiones = new GestorDeRevisiones(); // Instancia del gestor de revisiones
 
 class Revisor extends Usuario {

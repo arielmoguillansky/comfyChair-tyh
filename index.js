@@ -1,19 +1,12 @@
-const Revisor = require('./Revisor');
-const Autor = require('./Autor');
-const Organizador = require('./Organizador');
+const Revisor = require('./Usuario/Revisor/Revisor');
+const Autor = require('./Usuario/Autor/Autor');
 const Conferencia = require('./Conferencia/Conferencia');
 const Sesion = require('./Conferencia/Sesion/Sesion');
 const ArticuloRegular = require('./Articulo/ArticuloRegular');
-const EstrategiaInteres = require('./EstrategiaAsignacion');
-const NivelInteres = require('./NivelInteres');
+const NivelInteres = require('./Usuario/Revisor/NivelInteres');
 const Bidding = require('./Conferencia/Sesion/Estados/Bidding');
-const EstadoRevision = require('./Conferencia/Sesion/Estados/Revision');
-const Seleccion = require('./Conferencia/Sesion/Estados/Seleccion');
-const ArticuloPoster = require('./Articulo/ArticuloPoster');
-const AsignacionInteresPrimero = require('./EstrategiaAsignacion');
-const GestorDeRevisiones = require('./GestionRevisiones');
-const Revision = require('./Revision');
-const SeleccionadorMejores = require('./Seleccionador/SeleccionadorMejores');
+const AsignacionInteresPrimero = require('./Conferencia/Sesion/EstrategiaAsignacion');
+const Revision = require('./Conferencia/Sesion/Revision');
 
 const revisor1 = new Revisor('Revisor 1', 'Uno', 'UPC', 'john@doe.com', '1234');
 const revisor2 = new Revisor('Revisor 2', 'Dos', 'UPC', 'john@doe.com', '1234');
@@ -22,7 +15,6 @@ const revisor4 = new Revisor('Revisor 4', 'Cuatro', 'UPC', 'john@doe.com', '1234
 const autor1 = new Autor('Autor', 'Doe', 'UPC', 'john@doe.com', '1234');
 const autor2 = new Autor('Autor 2', 'Doe', 'UPC', 'john@doe.com', '1234');
 const autor3 = new Autor('Autor 3', 'Doe', 'UPC', 'john@doe.com', '1234');
-const organizador = new Organizador('Organizador', 'Doe', 'UPC', 'john@doe.com', '1234');
 const conferencia = new Conferencia('TYH 2024');
 const articuloReg1 = new ArticuloRegular('Articulo 1', 'archivo 1', 'resumen 1');
 const articuloRegMod = new ArticuloRegular('Articulo MOD', 'archivo MOD', 'resumen MOD');
@@ -33,7 +25,6 @@ const estrategiaAsignacion = new AsignacionInteresPrimero();
 sesion1.verificarFechaLimite()
 
 const nivelInteres = new NivelInteres();
-const gestionarRevisiones = new GestorDeRevisiones();
 
 // Creación
 conferencia.agregarSesion(sesion1)

@@ -1,4 +1,4 @@
-const NivelInteres = require('./NivelInteres');
+const NivelInteres = require('../../Usuario/Revisor/NivelInteres');
 const nivelInteres = new NivelInteres();
 
 class AsignacionInteresPrimero {
