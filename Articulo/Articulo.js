@@ -4,9 +4,14 @@ class Articulo {
     this._archivo = archivo;
     this._autores = [];
     this._intereses = new Map();
-    this._revisiones = []
+    this._revisiones = [];
+    this._puntajePromedio = 0;
   }
 
+
+  get puntajePromedio() {
+    return this._puntajePromedio;
+  }
 
   get revisiones() {
     return this._revisiones;
@@ -63,6 +68,12 @@ class Articulo {
   esArticuloRegular() {
     return false;
   }
+
+  calcularPuntajePromedio() {
+    const puntajes = this._revisiones.map(revision => revision.puntaje);
+    this._puntajePromedio = puntajes.reduce((a, b) => a + b, 0) / puntajes.length;
+  }
+
 }
 
 module.exports = Articulo;

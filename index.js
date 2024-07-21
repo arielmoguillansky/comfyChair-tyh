@@ -7,6 +7,9 @@ const NivelInteres = require('./Usuario/Revisor/NivelInteres');
 const Bidding = require('./Conferencia/Sesion/Estados/Bidding');
 const AsignacionInteresPrimero = require('./Conferencia/Sesion/EstrategiaAsignacion');
 const Revision = require('./Conferencia/Sesion/Revision');
+const SeleccionadorCorteFijo = require('./Seleccionador/SeleccionadorCorteFijo');
+const SeleccionadorMejores = require('./Seleccionador/SeleccionadorMejores');
+const SesionRegular = require('./Conferencia/Sesion/SesionRegular');
 
 const revisor1 = new Revisor('Revisor 1', 'Uno', 'UPC', 'john@doe.com', '1234');
 const revisor2 = new Revisor('Revisor 2', 'Dos', 'UPC', 'john@doe.com', '1234');
@@ -20,9 +23,9 @@ const articuloReg1 = new ArticuloRegular('Articulo 1', 'archivo 1', 'resumen 1')
 const articuloRegMod = new ArticuloRegular('Articulo MOD', 'archivo MOD', 'resumen MOD');
 const articuloReg2 = new ArticuloRegular('Articulo 2', 'archivo 2', 'resumen 2');
 // const articuloPost1 = new ArticuloPoster('Articulo Poster 1', 'archivo 1', 'fuente 1');
-const sesion1 = new Sesion('Sesion 1', new Date(new Date().getTime() + 10 * 60000));
+const sesion1 = new SesionRegular('Sesion 1', new Date(new Date().getTime() + 10 * 60000), new SeleccionadorCorteFijo(50));
 const estrategiaAsignacion = new AsignacionInteresPrimero();
-sesion1.verificarFechaLimite()
+sesion1.verificarFechaLimiteDeRecepcion()
 
 const nivelInteres = new NivelInteres();
 
@@ -40,7 +43,7 @@ autor3.asignarArticulo(articuloReg2)
 // Recepción de artículos
 console.log('Estado sesion:', sesion1.estado);
 autor1.enviarArticulo(articuloReg1, sesion1);
-// autor1.enviarArticulo(articuloReg2, sesion1);
+autor1.enviarArticulo(articuloReg2, sesion1);
 // autor3.enviarArticulo(articuloPost1, sesion1);
 autor1.modificarArticulo(articuloReg1, articuloRegMod, sesion1)
 
@@ -50,9 +53,9 @@ console.log('Estado sesion:', sesion1.estado);
 revisor1.expresarInteres(articuloReg1, nivelInteres.interesado(), sesion1);
 revisor2.expresarInteres(articuloReg1, nivelInteres.quizas(), sesion1);
 revisor3.expresarInteres(articuloReg1, nivelInteres.interesado(), sesion1);
-// revisor1.expresarInteres(articuloReg2, nivelInteres.quizas(), sesion1);
-// revisor2.expresarInteres(articuloReg2, nivelInteres.interesado(), sesion1);
-// revisor3.expresarInteres(articuloReg2, nivelInteres.noInteresado(), sesion1);
+revisor1.expresarInteres(articuloReg2, nivelInteres.quizas(), sesion1);
+revisor2.expresarInteres(articuloReg2, nivelInteres.interesado(), sesion1);
+revisor3.expresarInteres(articuloReg2, nivelInteres.noInteresado(), sesion1);
 // revisor4.expresarInteres(articuloReg1, nivelInteres.noInteresado(), sesion1);
 // revisor1.expresarInteres(articuloPost1, nivelInteres.noInteresado(), sesion1);
 // revisor2.expresarInteres(articuloPost1, nivelInteres.interesado(), sesion1);
@@ -64,16 +67,23 @@ estrategiaAsignacion.asignar(sesion1, conferencia.revisores);
 
 // Revision
 // sesion1.estado = new Revision();
-const revision1 = new Revision('Muy bien', 1);
-const revision2 = new Revision('Muy bien', 2);
+const revision1 = new Revision('bien', 2);
+const revision2 = new Revision('Muy bien', 3);
+const revision3 = new Revision('Mal', -2);
+const revision4 = new Revision('Muy mal', -3);
+const revision5 = new Revision('neutro', 0);
+const revision6 = new Revision('mejor', 1);
 revisor1.revisar(articuloReg1, revision1);
 revisor2.revisar(articuloReg1, revision2);
-revisor3.revisar(articuloReg1, revision2);
+revisor3.revisar(articuloReg1, revision3);
+revisor1.revisar(articuloReg2, revision6);
+revisor2.revisar(articuloReg2, revision5);
+revisor3.revisar(articuloReg2, revision4);
 
 // Selección
 // sesion1.estado = new Seleccion();
 sesion1.verificarRevisiones();
 // Cambiar metodo de seleccion
-// sesion1.cambiarMetodoSeleccion(new SeleccionadorMejores(sesion1.articulos, 1));
-console.log('Estado sesion:', sesion1.seleccionador);
+sesion1.cambiarMetodoSeleccion(new SeleccionadorMejores(0));
+console.log('Estado sesion:', sesion1.seleccionarArticulos());
 

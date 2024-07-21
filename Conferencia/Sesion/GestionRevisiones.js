@@ -8,8 +8,8 @@ class GestorDeRevisiones {
     if (revisiones >= 3) {
       throw new Error('El artículo ya tiene el máximo de 3 revisiones.');
     }
-
     articulo.revisiones = revision;
+    articulo.calcularPuntajePromedio()
   }
 
   obtenerRevisiones(articulo) {

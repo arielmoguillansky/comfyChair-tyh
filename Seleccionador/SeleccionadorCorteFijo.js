@@ -3,6 +3,9 @@ const Seleccionador = require('./Seleccionador');
 class SeleccionadorCorteFijo extends Seleccionador {
   constructor(porcentajeAceptacion) {
     super();
+    if (!porcentajeAceptacion) {
+      throw new Error('El porcentaje de aceptación es requerido');
+    }
     this.porcentajeAceptacion = porcentajeAceptacion;
   }
 

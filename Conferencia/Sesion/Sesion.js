@@ -1,12 +1,20 @@
-const SeleccionadorCorteFijo = require('../../Seleccionador/SeleccionadorCorteFijo.js');
 const Recepcion = require('./Estados/Recepcion.js');
 class Sesion {
-  constructor(tema, fechaLimite, porcentajeAceptacion) {
+  constructor(tema, fechaLimite, seleccionador) {
+    if (!tema) {
+      throw new Error('El tema es requerido');
+    }
+    if (!fechaLimite) {
+      throw new Error('La fecha limite es requerida');
+    }
+    if (!seleccionador) {
+      throw new Error('El seleccionador es requerido');
+    }
     this._tema = tema;
     this._articulos = [];
     this._estado = new Recepcion();
     this._fechaLimite = fechaLimite;
-    this.seleccionador = new SeleccionadorCorteFijo(porcentajeAceptacion);
+    this._seleccionador = seleccionador;
   }
 
   get fechaLimite() {
@@ -33,25 +41,23 @@ class Sesion {
     return this._articulos;
   }
 
-  recibirArticulo(articulo) {
-    this.verificarFechaLimite();
-    if (this._estado.esRecepcion()) {
-      if (!articulo.existeAutor()) {
-        throw new Error('El articulo debe tener al menos un autor');
-      }
-      if (!articulo.existeTitulo()) {
-        throw new Error('El articulo debe tener un titulo');
-      }
-      if (articulo.esArticuloRegular() && !articulo.resumenValido()) {
-        throw new Error('El resumen del articulo debe tener menos de 300 caracteres');
-      }
-      this._articulos.push(articulo);
-    } else {
-      throw new Error('No se pueden agregar articulos en este estado');
-    }
+  esSesionRegular() {
+    return false;
   }
 
-  verificarFechaLimite() {
+  esSesionPoster() {
+    return false;
+  }
+
+  esSesionWorkShop() {
+    return false;
+  }
+
+  agregarArticulo(articulo) {
+    this._articulos.push(articulo);
+  }
+
+  verificarFechaLimiteDeRecepcion() {
     if (new Date() > this._fechaLimite) {
       this._estado.cambioEstado(this);
     }
@@ -65,11 +71,11 @@ class Sesion {
   }
 
   seleccionarArticulos() {
-    return this.seleccionador.seleccionar(this.articulos);
+    return this._seleccionador.seleccionar(this._articulos);
   }
 
-  cambiarMetodoSeleccion(metodo, parametro) {
-    this.seleccionador = metodo
+  cambiarMetodoSeleccion(metodo) {
+    this._seleccionador = metodo
   }
 }
 

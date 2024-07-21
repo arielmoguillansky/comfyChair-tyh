@@ -1,5 +1,5 @@
 class Conferencia {
-  constructor(nombre, fecha, lugar) {
+  constructor(nombre) {
     this._nombre = nombre;
     this._sesiones = [];
     this._revisores = [];
