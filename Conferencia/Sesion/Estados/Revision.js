@@ -7,7 +7,7 @@ class Revision extends EstadoSesion {
   }
 
   cambioEstado(sesion) {
-    sesion.estado(new Seleccion())
+    sesion.estado = new Seleccion()
   }
 
   esRevision() {

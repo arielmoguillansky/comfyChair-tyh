@@ -1,10 +1,12 @@
+const SeleccionadorCorteFijo = require('../../Seleccionador/SeleccionadorCorteFijo.js');
 const Recepcion = require('./Estados/Recepcion.js');
 class Sesion {
-  constructor(tema, fechaLimite) {
+  constructor(tema, fechaLimite, porcentajeAceptacion) {
     this._tema = tema;
     this._articulos = [];
     this._estado = new Recepcion();
     this._fechaLimite = fechaLimite;
+    this.seleccionador = new SeleccionadorCorteFijo(porcentajeAceptacion);
   }
 
   get fechaLimite() {
@@ -53,6 +55,21 @@ class Sesion {
     if (new Date() > this._fechaLimite) {
       this._estado.cambioEstado(this);
     }
+  }
+
+  verificarRevisiones() {
+    const articuloSinRevision = this._articulos.find(articulo => articulo.revisiones.length < 3);
+    if (this._estado.esRevision() && !articuloSinRevision) {
+      this._estado.cambioEstado(this);
+    }
+  }
+
+  seleccionarArticulos() {
+    return this.seleccionador.seleccionar(this.articulos);
+  }
+
+  cambiarMetodoSeleccion(metodo, parametro) {
+    this.seleccionador = metodo
   }
 }
 

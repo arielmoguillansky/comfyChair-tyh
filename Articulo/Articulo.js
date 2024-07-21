@@ -4,8 +4,21 @@ class Articulo {
     this._archivo = archivo;
     this._autores = [];
     this._intereses = new Map();
+    this._revisiones = []
   }
 
+
+  get revisiones() {
+    return this._revisiones;
+  }
+
+  set revisiones(revision) {
+    this._revisiones.push(revision);
+  }
+
+  get intereses() {
+    return this._intereses;
+  }
 
   get autores() {
     return this._autores;

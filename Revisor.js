@@ -1,4 +1,6 @@
 const Usuario = require('./Usuario');
+const GestorDeRevisiones = require('./GestionRevisiones');
+const gestorDeRevisiones = new GestorDeRevisiones(); // Instancia del gestor de revisiones
 
 class Revisor extends Usuario {
   constructor(nombre, apellido, afiliacion, email, contraseña) {
@@ -27,6 +29,9 @@ class Revisor extends Usuario {
 
   }
 
+  revisar(articulo, revision) {
+    gestorDeRevisiones.agregarRevision(articulo, revision);
+  }
 }
 
 module.exports = Revisor;

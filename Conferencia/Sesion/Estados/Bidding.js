@@ -7,7 +7,7 @@ class Bidding extends EstadoSesion {
   }
 
   cambioEstado(sesion) {
-    sesion.estado(new Revision())
+    sesion.estado = new Revision()
   }
 
   esBidding() {
