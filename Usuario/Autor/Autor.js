@@ -3,12 +3,10 @@ const Usuario = require('../Usuario');
 class Autor extends Usuario {
   constructor(nombre, apellido, afiliacion, email, contraseña) {
     super(nombre, apellido, afiliacion, email, contraseña);
-    this._articulos = [];
   }
 
   asignarArticulo(articulo) {
     articulo.agregarAutor(this);
-    this._articulos.push(articulo);
   }
 
   enviarArticulo(articulo, sesion) {

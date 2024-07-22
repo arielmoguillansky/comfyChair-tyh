@@ -1,6 +1,6 @@
 const Usuario = require('../Usuario');
 const GestorDeRevisiones = require('../../Conferencia/Sesion/GestionRevisiones');
-const gestorDeRevisiones = new GestorDeRevisiones(); // Instancia del gestor de revisiones
+const gestorDeRevisiones = new GestorDeRevisiones();
 
 class Revisor extends Usuario {
   constructor(nombre, apellido, afiliacion, email, contraseña) {
