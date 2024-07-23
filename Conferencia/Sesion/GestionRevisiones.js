@@ -1,7 +1,4 @@
 class GestorDeRevisiones {
-  constructor() {
-  }
-
   agregarRevision(articulo, revision) {
     const revisiones = articulo.revisiones.length;
 
@@ -17,7 +14,6 @@ class GestorDeRevisiones {
     const puntajes = articulo.revisiones.map(revision => revision.puntaje);
     articulo.puntajePromedio = puntajes.reduce((a, b) => a + b, 0) / puntajes.length;
   }
-
 }
 
 module.exports = GestorDeRevisiones;

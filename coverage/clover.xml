@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1721703132053" clover="3.2.0">
-  <project timestamp="1721703132053" name="All files">
-    <metrics statements="195" coveredstatements="178" conditionals="48" coveredconditionals="38" methods="89" coveredmethods="78" elements="332" coveredelements="294" complexity="0" loc="195" ncloc="195" packages="8" files="22" classes="22"/>
+<coverage generated="1721772613042" clover="3.2.0">
+  <project timestamp="1721772613042" name="All files">
+    <metrics statements="195" coveredstatements="178" conditionals="48" coveredconditionals="38" methods="88" coveredmethods="77" elements="331" coveredelements="293" complexity="0" loc="195" ncloc="195" packages="8" files="22" classes="22"/>
     <package name="Articulo">
       <metrics statements="40" coveredstatements="39" conditionals="4" coveredconditionals="4" methods="24" coveredmethods="23"/>
       <file name="Articulo.js" path="C:\Users\ariel\Desktop\Master en Ingenieria\comfyChair-tyh\Articulo\Articulo.js">
@@ -70,17 +70,17 @@
       </file>
     </package>
     <package name="Conferencia.Sesion">
-      <metrics statements="55" coveredstatements="44" conditionals="22" coveredconditionals="14" methods="24" coveredmethods="18"/>
+      <metrics statements="55" coveredstatements="44" conditionals="22" coveredconditionals="14" methods="23" coveredmethods="17"/>
       <file name="GestionRevisiones.js" path="C:\Users\ariel\Desktop\Master en Ingenieria\comfyChair-tyh\Conferencia\Sesion\GestionRevisiones.js">
-        <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
-        <line num="6" count="32" type="stmt"/>
-        <line num="8" count="32" type="cond" truecount="1" falsecount="1"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="11" count="32" type="stmt"/>
-        <line num="12" count="32" type="stmt"/>
-        <line num="17" count="62" type="stmt"/>
-        <line num="18" count="62" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
+        <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="3" count="32" type="stmt"/>
+        <line num="5" count="32" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="32" type="stmt"/>
+        <line num="9" count="32" type="stmt"/>
+        <line num="14" count="62" type="stmt"/>
+        <line num="15" count="62" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
       </file>
       <file name="Revision.js" path="C:\Users\ariel\Desktop\Master en Ingenieria\comfyChair-tyh\Conferencia\Sesion\Revision.js">
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>

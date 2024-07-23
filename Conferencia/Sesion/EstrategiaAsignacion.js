@@ -49,7 +49,7 @@ class AsignacionInteresPrimero {
     return asignaciones;
   }
 
-  asignarRevisores(articulo, interesados, quizas, noInteresados, asignaciones) {
+  _asignarRevisores(articulo, interesados, quizas, noInteresados, asignaciones) {
     let asignados = [];
     const maxRevisores = 3;
     // Asignar primero a los interesados
@@ -68,7 +68,7 @@ class AsignacionInteresPrimero {
     return asignados;
   }
 
-  seleccionarRevisores(articulo, candidatos, asignaciones, maxSeleccion) {
+  _seleccionarRevisores(articulo, candidatos, asignaciones, maxSeleccion) {
     let seleccionados = [];
 
     candidatos.forEach(revisor => {
