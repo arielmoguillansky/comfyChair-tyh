@@ -7,10 +7,6 @@ class Revisor extends Usuario {
     super(nombre, apellido, afiliacion, email, contraseña);
   }
 
-  esRevisor() {
-    return true;
-  }
-
   expresarInteres(articulo, interes, sesion) {
     if (sesion._estado.esBidding()) {
       const articuloEncontrado = sesion._articulos.find((articuloExistente, index) => {

@@ -6,6 +6,7 @@ const SesionRegular = require('../Conferencia/Sesion/SesionRegular');
 const SeleccionadorCorteFijo = require('../Seleccionador/SeleccionadorCorteFijo');
 const Revisor = require('../Usuario/Revisor/Revisor');
 const SesionWorkshop = require('../Conferencia/Sesion/SesionWorkshop');
+const SeleccionadorMejores = require('../Seleccionador/SeleccionadorMejores');
 
 let revisor, sesion, articulo
 const seleccionador = new SeleccionadorCorteFijo(50)
@@ -23,6 +24,13 @@ describe('Una sesión', () => {
     sesion.verificarFechaLimiteDeRecepcion();
     const estado = sesion.estado;
     expect(estado.esBidding()).toBeTruthy();
+  });
+
+  it('debe poder cambiar el método de selección', () => {
+    sesion = new Sesion('Sesion 1', fechaLimitePasada, seleccionador);
+    const seleccionadorMejores = new SeleccionadorMejores(1)
+    sesion.cambiarMetodoSeleccion(seleccionadorMejores);
+    expect(sesion.seleccionador).toEqual(seleccionadorMejores);
   });
 });
 

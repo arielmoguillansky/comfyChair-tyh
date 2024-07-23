@@ -17,6 +17,10 @@ class Sesion {
     this._seleccionador = seleccionador;
   }
 
+  get seleccionador() {
+    return this._seleccionador;
+  }
+
   get fechaLimite() {
     return this._fechaLimite;
   }
@@ -39,18 +43,6 @@ class Sesion {
 
   get articulos() {
     return this._articulos;
-  }
-
-  esSesionRegular() {
-    return false;
-  }
-
-  esSesionPoster() {
-    return false;
-  }
-
-  esSesionWorkShop() {
-    return false;
   }
 
   agregarArticulo(articulo) {

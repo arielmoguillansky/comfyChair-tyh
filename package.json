@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "nodemon": "nodemon index.js",
+    "test-coverage": "jest --coverage",
     "test": "jest"
   },
   "author": "",

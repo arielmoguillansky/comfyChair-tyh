@@ -29,9 +29,22 @@ describe('Un revisor', () => {
     expect(articulo.intereses.get(revisor)).toContain(nivelInteres.interesado());
   });
 
+  it('debe poder modificar el interés en un articulo durante la etapa de bidding', () => {
+    sesion.estado = new Bidding();
+    revisor.expresarInteres(articulo, nivelInteres.interesado(), sesion);
+    revisor.expresarInteres(articulo, nivelInteres.quizas(), sesion);
+    expect(articulo.intereses.get(revisor)).toContain(nivelInteres.quizas());
+  });
+
   it('no debe poder expresar interés en un articulo durante otra etapa que no sea bidding', () => {
     sesion.estado = new EstadoRevision();
-    expect(() => revisor.expresarInteres(articulo, nivelInteres.interesado(), sesion)).toThrow();
+    expect(() => revisor.expresarInteres(articulo, nivelInteres.noInteresado(), sesion)).toThrow();
+  });
+
+  it('no debe poder expresar interés en un articulo inexsistente', () => {
+    sesion.estado = new Bidding();
+    const articuloInexistente = new ArticuloRegular('Articulo Regular 2', 'archivo 2', 'resumen 2');
+    expect(() => revisor.expresarInteres(articuloInexistente, nivelInteres.noInteresado(), sesion)).toThrow();
   });
 
   it('debe poder revisar artículo durante la etapa de revisión', () => {
@@ -39,5 +52,10 @@ describe('Un revisor', () => {
     const revision = new Revision('Buen trabajo', 3);
     revisor.revisar(articulo, revision);
     expect(articulo.revisiones).toContain(revision);
+  });
+
+  it('debe puntuar un articulo en un rango de -3 a 3', () => {
+    sesion.estado = new Revision();
+    expect(() => new Revision('Buen trabajo', -5)).toThrow();
   });
 });

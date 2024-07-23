@@ -8,9 +8,6 @@ class SesionRegular extends Sesion {
     super.agregarArticulo(articulo);
   }
 
-  esSesionRegular() {
-    return true;
-  }
 }
 
 module.exports = SesionRegular;

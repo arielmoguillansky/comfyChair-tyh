@@ -2,6 +2,9 @@ const Articulo = require('./Articulo.js');
 class ArticuloRegular extends Articulo {
   constructor(titulo, archivo, resumen) {
     super(titulo, archivo);
+    if (resumen.length > 300) {
+      throw new Error('El resumen del articulo debe tener menos de 300 caracteres');
+    }
     this._resumen = resumen
   }
 
@@ -15,10 +18,6 @@ class ArticuloRegular extends Articulo {
 
   esArticuloRegular() {
     return true;
-  }
-
-  resumenValido() {
-    return this._resumen.length < 300;
   }
 }
 

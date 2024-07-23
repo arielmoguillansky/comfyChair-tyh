@@ -8,9 +8,6 @@ class Revision {
     this._puntaje = puntaje;
   }
 
-  get texto() {
-    return this._texto;
-  }
   get puntaje() {
     return this._puntaje;
   }

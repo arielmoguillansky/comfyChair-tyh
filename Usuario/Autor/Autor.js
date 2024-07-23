@@ -15,18 +15,11 @@ class Autor extends Usuario {
       if (!articulo.existeAutor()) {
         throw new Error('El articulo debe tener al menos un autor');
       }
-      if (!articulo.existeTitulo()) {
-        throw new Error('El articulo debe tener un titulo');
-      }
-      if (articulo.esArticuloRegular() && !articulo.resumenValido()) {
-        throw new Error('El resumen del articulo debe tener menos de 300 caracteres');
-      }
       sesion.agregarArticulo(articulo);
     } else {
       throw new Error('No se pueden agregar articulos en este estado');
     }
   }
-
 
   modificarArticulo(articulo, articuloActualizado, sesion) {
     sesion.verificarFechaLimiteDeRecepcion();
@@ -45,16 +38,13 @@ class Autor extends Usuario {
         }
       });
 
+
       if (!articuloEncontrado) {
         throw new Error('El articulo no existe');
       }
     } else {
       throw new Error('No se pueden modificar articulos en este estado');
     }
-  }
-
-  esAutor() {
-    return true;
   }
 }
 

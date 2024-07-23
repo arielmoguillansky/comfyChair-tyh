@@ -1,5 +1,8 @@
 class Articulo {
   constructor(titulo, archivo) {
+    if (!titulo) {
+      throw new Error('El articulo debe tener un titulo');
+    }
     this._titulo = titulo;
     this._archivo = archivo;
     this._autores = [];
@@ -11,6 +14,10 @@ class Articulo {
 
   get puntajePromedio() {
     return this._puntajePromedio;
+  }
+
+  set puntajePromedio(puntajePromedio) {
+    this._puntajePromedio = puntajePromedio;
   }
 
   get revisiones() {
@@ -53,10 +60,6 @@ class Articulo {
     return this._autores.length > 0
   }
 
-  existeTitulo() {
-    return this._titulo.length > 0;
-  }
-
   agregarInteres(revisor, interes) {
     this._intereses.set(revisor, interes);
   }
@@ -67,11 +70,6 @@ class Articulo {
 
   esArticuloRegular() {
     return false;
-  }
-
-  calcularPuntajePromedio() {
-    const puntajes = this._revisiones.map(revision => revision.puntaje);
-    this._puntajePromedio = puntajes.reduce((a, b) => a + b, 0) / puntajes.length;
   }
 
 }

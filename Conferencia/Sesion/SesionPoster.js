@@ -7,10 +7,6 @@ class SesionPoster extends Sesion {
     }
     super.agregarArticulo(articulo);
   }
-
-  esSesionPoster() {
-    return true;
-  }
 }
 
 module.exports = SesionPoster;
