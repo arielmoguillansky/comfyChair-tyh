@@ -31,10 +31,10 @@ const nivelInteres = new NivelInteres();
 
 // Creación
 conferencia.agregarSesion(sesion1)
-conferencia.agregarRevisor(revisor1)
-conferencia.agregarRevisor(revisor2)
-conferencia.agregarRevisor(revisor3)
-conferencia.agregarRevisor(revisor4)
+sesion1.agregarRevisor(revisor1)
+sesion1.agregarRevisor(revisor2)
+sesion1.agregarRevisor(revisor3)
+sesion1.agregarRevisor(revisor4)
 autor1.asignarArticulo(articuloReg1)
 autor2.asignarArticulo(articuloReg1)
 autor3.asignarArticulo(articuloReg2)
@@ -63,7 +63,7 @@ revisor3.expresarInteres(articuloReg2, nivelInteres.noInteresado(), sesion1);
 // revisor1.expresarInteres(articuloReg1, nivelInteres.quizas(), sesion1);
 
 // Asignación de artículos
-estrategiaAsignacion.asignar(sesion1, conferencia.revisores);
+estrategiaAsignacion.asignar(sesion1);
 
 // Revision
 // sesion1.estado = new Revision();

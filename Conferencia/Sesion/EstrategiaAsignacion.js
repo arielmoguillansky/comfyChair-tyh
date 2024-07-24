@@ -2,7 +2,8 @@ const NivelInteres = require('../../Usuario/Revisor/NivelInteres');
 const nivelInteres = new NivelInteres();
 
 class AsignacionInteresPrimero {
-  asignar(sesion, revisores) {
+  asignar(sesion) {
+    const revisores = sesion.revisores
     let asignaciones = new Map();
     const articulos = sesion.articulos;
 
@@ -40,7 +41,7 @@ class AsignacionInteresPrimero {
             break;
         }
       });
-      let asignados = this.asignarRevisores(articulo, interesados, quizas, noInteresados, asignaciones);
+      let asignados = this._asignarRevisores(articulo, interesados, quizas, noInteresados, asignaciones);
 
       asignaciones.set(articulo, asignados);
     });
@@ -53,16 +54,16 @@ class AsignacionInteresPrimero {
     let asignados = [];
     const maxRevisores = 3;
     // Asignar primero a los interesados
-    asignados.push(...this.seleccionarRevisores(articulo, interesados, asignaciones, maxRevisores - asignados.length));
+    asignados.push(...this._seleccionarRevisores(articulo, interesados, asignaciones, maxRevisores - asignados.length));
 
     // Asignar luego a los quizas
     if (asignados.length < maxRevisores) {
-      asignados.push(...this.seleccionarRevisores(articulo, quizas, asignaciones, maxRevisores - asignados.length));
+      asignados.push(...this._seleccionarRevisores(articulo, quizas, asignaciones, maxRevisores - asignados.length));
     }
 
     // // Asignar finalmente a los no interesados
     if (asignados.length < maxRevisores) {
-      asignados.push(...this.seleccionarRevisores(articulo, noInteresados, asignaciones, maxRevisores - asignados.length));
+      asignados.push(...this._seleccionarRevisores(articulo, noInteresados, asignaciones, maxRevisores - asignados.length));
     }
 
     return asignados;

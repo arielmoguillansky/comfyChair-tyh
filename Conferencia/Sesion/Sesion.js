@@ -15,6 +15,11 @@ class Sesion {
     this._estado = new Recepcion();
     this._fechaLimite = fechaLimite;
     this._seleccionador = seleccionador;
+    this._revisores = [];
+  }
+
+  get revisores() {
+    return this._revisores;
   }
 
   get seleccionador() {
@@ -43,6 +48,10 @@ class Sesion {
 
   get articulos() {
     return this._articulos;
+  }
+
+  agregarRevisor(revisor) {
+    this._revisores.push(revisor);
   }
 
   agregarArticulo(articulo) {

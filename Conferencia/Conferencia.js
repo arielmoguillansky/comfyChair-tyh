@@ -20,10 +20,6 @@ class Conferencia {
   agregarSesion(sesion) {
     this._sesiones.push(sesion);
   }
-
-  agregarRevisor(revisor) {
-    this._revisores.push(revisor);
-  }
 }
 
 module.exports = Conferencia;

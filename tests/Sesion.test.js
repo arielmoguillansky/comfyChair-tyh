@@ -19,6 +19,13 @@ describe('Una sesión', () => {
     expect(estado.esRecepcion()).toBeTruthy();
   });
 
+  it('debe poder agregar un revisor', () => {
+    revisor = new Revisor('Carlos', 'Rodriguez', 'UNLP', 'carlos@mail.com', '1234');
+    sesion.agregarRevisor(revisor);
+    expect(sesion.revisores).toHaveLength(1);
+    expect(sesion.revisores).toContain(revisor);
+  });
+
   it('debe poder actualizar el estado a bidding si se supera la fecha limite de recepcion', () => {
     sesion = new Sesion('Sesion 1', fechaLimitePasada, seleccionador);
     sesion.verificarFechaLimiteDeRecepcion();
