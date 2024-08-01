@@ -2,11 +2,27 @@
 
 Entrega para la materia TyH correspondiente a la Maestría en Ingeniería de Software de la Universidad Nacional de La Plata.
 
+### Proceso
+
+Primero se comenzó por la implementación de los usuarios con sus distintos roles. Para ello, se creó la clase abstracta Usuario desde la cual se extienden los diferentes tipos de usuarios, cada uno con métodos y propiedades específicas: Autor, Organizador y Revisor.
+
+La clase Autor tiene métodos especificos como el envío de artículos dentro de la fecha límite de cada sesión, la asignación de artículos y su modificación.
+
+La clase Revisor se encarga de expresar el interes por artículo y revisar cada uno. Cada revisor envía a cada artículo instancias de la clase Revisión, que se compone de un puntaje y un comentario.
+
+Para cada evento, se creó la clase Conferencia que está compuesta por una o más sesiones. Esta está asosciada a la clase abstracta Sesión, de la cual se implementan las subclases SesionRegular, SesionPoster y SesionWorkshop. Cada tipo de sesiones acepta un determinado tipo de artículo.
+
+Cada sesión se compone de un solo estado y de un solo método de selección, el cual puede ser modificado. Tiene métodos que permiten agregar revisores y artículos, verificar la fecha límite durante la recepción de artículos y seleccionarlos.
+
+La clase abstracta Artículo se extiende a la clases de ArticuloRegular y ArticuloPoster. Cada sublase acepta propiedades diferentes para su construcción. Cada artículo contiene sus autores, el puntaje promedio (necesario durante la etapa de seleccion), los intereses asociados a los revisores y sus revisiones.
+
+La clase AsignacionInteresPrimero se encarga de asignar los artículos a los diferentes revisores según el nivel de interés mostrado. Se priorizan aquellos con alto nivel de interes, los que quizás estén interesados y, de ser necesario, los que no.
+
 ### Puesta a punto y ejecución
 
-- ```npm install```
-- ```npm run start```
-- Ejecución de tests: ```npm run test``` con coverage: ```npm run test-coverage```
+- `npm install`
+- `npm run start`
+- Ejecución de tests: `npm run test` con coverage: `npm run test-coverage`
 
 #### Diagrama completo
 
@@ -41,7 +57,5 @@ Patrones de diseño presentes en el sistema:
 #### Strategy
 
 - Permite definir una familia de algoritmos, colocar cada uno de ellos en una clase separada y hacer sus objetos intercambiables.
-  
-![Screenshot from 2024-08-01 12-00-09](https://github.com/user-attachments/assets/4220bc28-b47b-478f-a77a-ce1dbd48365f)
 
-  
+![Screenshot from 2024-08-01 12-00-09](https://github.com/user-attachments/assets/4220bc28-b47b-478f-a77a-ce1dbd48365f)

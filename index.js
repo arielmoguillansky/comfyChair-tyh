@@ -10,6 +10,17 @@ const SeleccionadorCorteFijo = require("./Seleccionador/SeleccionadorCorteFijo")
 const SeleccionadorMejores = require("./Seleccionador/SeleccionadorMejores");
 const SesionRegular = require("./Conferencia/Sesion/SesionRegular");
 
+// Crear conferencia
+const conferencia = new Conferencia("TYH 2024");
+
+// Crear sesión
+const sesion1 = new SesionRegular(
+  "Sesion 1",
+  new Date(new Date().getTime() + 10 * 60000),
+  new SeleccionadorCorteFijo(50)
+);
+
+// Crear Usuarios
 const revisor1 = new Revisor("Revisor 1", "Uno", "UPC", "john@doe.com", "1234");
 const revisor2 = new Revisor("Revisor 2", "Dos", "UPC", "john@doe.com", "1234");
 const revisor3 = new Revisor(
@@ -29,7 +40,8 @@ const revisor4 = new Revisor(
 const autor1 = new Autor("Autor", "Doe", "UPC", "john@doe.com", "1234");
 const autor2 = new Autor("Autor 2", "Doe", "UPC", "john@doe.com", "1234");
 const autor3 = new Autor("Autor 3", "Doe", "UPC", "john@doe.com", "1234");
-const conferencia = new Conferencia("TYH 2024");
+
+// Crear artículos
 const articuloReg1 = new ArticuloRegular(
   "Articulo 1",
   "archivo 1",
@@ -45,15 +57,15 @@ const articuloReg2 = new ArticuloRegular(
   "archivo 2",
   "resumen 2"
 );
-const sesion1 = new SesionRegular(
-  "Sesion 1",
-  new Date(new Date().getTime() + 10 * 60000),
-  new SeleccionadorCorteFijo(50)
-);
-const estrategiaAsignacion = new AsignacionInteresPrimero();
-sesion1.verificarFechaLimiteDeRecepcion();
 
+// Crear estrategia de asignacion
+const estrategiaAsignacion = new AsignacionInteresPrimero();
+
+// Crear nivel de interes
 const nivelInteres = new NivelInteres();
+
+// verficar si se llegó a la fecha limite para la recepción de artículos
+sesion1.verificarFechaLimiteDeRecepcion();
 
 // Creación
 conferencia.agregarSesion(sesion1);
