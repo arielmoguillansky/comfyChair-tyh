@@ -2,6 +2,12 @@
 
 Entrega para la materia TyH correspondiente a la Maestría en Ingeniería de Software de la Universidad Nacional de La Plata.
 
+### Puesta a punto y ejecución
+
+- ```npm install```
+- ```npm run start```
+- Ejecución de tests: ```npm run test``` con coverage: ```npm run test-coverage```
+
 #### Diagrama completo
 
 ![Screenshot from 2024-08-01 11-45-37](https://github.com/user-attachments/assets/bae61598-3e01-4179-9ff8-ad28dbe8e5d2)
