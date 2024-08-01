@@ -1,5 +1,5 @@
 TN:
-SF:Articulo\Articulo.js
+SF:Articulo/Articulo.js
 FN:2,(anonymous_0)
 FN:15,(anonymous_1)
 FN:19,(anonymous_2)
@@ -66,7 +66,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:Articulo\ArticuloPoster.js
+SF:Articulo/ArticuloPoster.js
 FN:3,(anonymous_0)
 FN:8,(anonymous_1)
 FN:12,(anonymous_2)
@@ -90,7 +90,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Articulo\ArticuloRegular.js
+SF:Articulo/ArticuloRegular.js
 FN:3,(anonymous_0)
 FN:11,(anonymous_1)
 FN:15,(anonymous_2)
@@ -118,7 +118,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:Conferencia\Conferencia.js
+SF:Conferencia/Conferencia.js
 FN:2,(anonymous_0)
 FN:8,(anonymous_1)
 FN:12,(anonymous_2)
@@ -145,7 +145,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Conferencia\Sesion\GestionRevisiones.js
+SF:Conferencia/Sesion/GestionRevisiones.js
 FN:2,(anonymous_0)
 FN:13,(anonymous_1)
 FN:14,(anonymous_2)
@@ -172,7 +172,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:Conferencia\Sesion\Revision.js
+SF:Conferencia/Sesion/Revision.js
 FN:2,(anonymous_0)
 FN:11,(anonymous_1)
 FNF:2
@@ -195,7 +195,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:Conferencia\Sesion\Sesion.js
+SF:Conferencia/Sesion/Sesion.js
 FN:3,(anonymous_0)
 FN:21,(anonymous_1)
 FN:25,(anonymous_2)
@@ -279,7 +279,7 @@ BRF:12
 BRH:5
 end_of_record
 TN:
-SF:Conferencia\Sesion\SesionPoster.js
+SF:Conferencia/Sesion/SesionPoster.js
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -297,7 +297,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:Conferencia\Sesion\SesionRegular.js
+SF:Conferencia/Sesion/SesionRegular.js
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -315,7 +315,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:Conferencia\Sesion\SesionWorkshop.js
+SF:Conferencia/Sesion/SesionWorkshop.js
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -329,7 +329,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Conferencia\Sesion\Estados\Bidding.js
+SF:Conferencia/Sesion/Estados/Bidding.js
 FN:5,(anonymous_0)
 FN:9,(anonymous_1)
 FN:13,(anonymous_2)
@@ -350,7 +350,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Conferencia\Sesion\Estados\EstadoSesion.js
+SF:Conferencia/Sesion/Estados/EstadoSesion.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FN:10,(anonymous_2)
@@ -375,7 +375,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Conferencia\Sesion\Estados\Recepcion.js
+SF:Conferencia/Sesion/Estados/Recepcion.js
 FN:6,(anonymous_0)
 FN:10,(anonymous_1)
 FNF:2
@@ -393,7 +393,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Conferencia\Sesion\Estados\Revision.js
+SF:Conferencia/Sesion/Estados/Revision.js
 FN:5,(anonymous_0)
 FN:9,(anonymous_1)
 FN:13,(anonymous_2)
@@ -414,7 +414,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Conferencia\Sesion\Estados\Seleccion.js
+SF:Conferencia/Sesion/Estados/Seleccion.js
 FN:4,(anonymous_0)
 FN:8,(anonymous_1)
 FNF:2
@@ -431,7 +431,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Seleccionador\Seleccionador.js
+SF:Seleccionador/Seleccionador.js
 FN:2,(anonymous_0)
 FNF:1
 FNH:0
@@ -444,7 +444,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Seleccionador\SeleccionadorCorteFijo.js
+SF:Seleccionador/SeleccionadorCorteFijo.js
 FN:4,(anonymous_0)
 FN:12,(anonymous_1)
 FN:14,(anonymous_2)
@@ -470,7 +470,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:Seleccionador\SeleccionadorMejores.js
+SF:Seleccionador/SeleccionadorMejores.js
 FN:4,(anonymous_0)
 FN:9,(anonymous_1)
 FN:10,(anonymous_2)
@@ -490,7 +490,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Usuario\Usuario.js
+SF:Usuario/Usuario.js
 FN:2,(anonymous_0)
 FNF:1
 FNH:1
@@ -507,7 +507,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Usuario\Autor\Autor.js
+SF:Usuario/Autor/Autor.js
 FN:4,(anonymous_0)
 FN:8,(anonymous_1)
 FN:12,(anonymous_2)
@@ -564,7 +564,7 @@ BRF:14
 BRH:13
 end_of_record
 TN:
-SF:Usuario\Revisor\NivelInteres.js
+SF:Usuario/Revisor/NivelInteres.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FN:10,(anonymous_2)
@@ -583,7 +583,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:Usuario\Revisor\Revisor.js
+SF:Usuario/Revisor/Revisor.js
 FN:6,(anonymous_0)
 FN:10,(anonymous_1)
 FN:12,(anonymous_2)
